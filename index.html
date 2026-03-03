@@ -1,0 +1,332 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	Customized for Tracy Omogbai
+-->
+<html>
+	<head>
+		<title>Tracy Omogbai</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!-- Google Fonts: Nunito for headers, Nunito Sans for body -->
+		<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+		<style>
+
+			/* ── Global font overrides ── */
+			body, input, select, textarea {
+				font-family: 'Nunito Sans', sans-serif;
+			}
+
+			h1, h2, h3, h4, h5, h6 {
+				font-family: 'Nunito', sans-serif;
+				font-weight: 700;
+				letter-spacing: -0.01em;
+			}
+
+			/* Section header h2 */
+			#one header.major h2 {
+				font-size: 2em;
+				font-weight: 800;
+				line-height: 1.3;
+				color: #2d1b4e;
+			}
+
+			/* Recent Work & Get In Touch headings */
+			#two h2, #three h2 {
+				font-family: 'Nunito', sans-serif;
+				font-weight: 800;
+				color: #2d1b4e;
+				font-size: 1.8em;
+			}
+
+			/* Project titles */
+			.work-item h3 {
+				font-family: 'Nunito', sans-serif;
+				font-weight: 700;
+				color: #3b1a6b;
+			}
+
+			/* Body text */
+			#one p, #three p, .work-item p {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1em;
+    line-height: 1.8;
+    color: #222;
+}
+
+
+			/* ── Purple gradient sidebar ── */
+			#header {
+				background: linear-gradient(160deg, #c9b8e8 0%, #7b4fa6 45%, #3b1a6b 100%);
+				padding-bottom: 80px;
+			}
+
+			/* ── Sidebar name/intro font ── */
+			#header h1 {
+				font-family: 'Nunito', sans-serif;
+				font-weight: 600;
+				color: #f0eaff;
+				font-size: 1em;
+				line-height: 1.7;
+			}
+
+			#header h1 strong {
+				font-family: 'Nunito', sans-serif;
+				font-weight: 800;
+				color: #ffffff;
+				font-size: 1.15em;
+				display: block;
+				margin-bottom: 6px;
+			}
+
+			/* ── Circular profile image ── */
+			#header .image.avatar img {
+				border-radius: 50%;
+				border: 3px solid rgba(255,255,255,0.35);
+				box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+			}
+
+			/* ── Social icons fixed at bottom of sidebar ── */
+			#header .social-fixed {
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				width: 22em;
+				background: linear-gradient(to top, rgba(43, 14, 80, 0.97) 70%, transparent 100%);
+				padding: 18px 0 22px 0;
+				text-align: center;
+				z-index: 100;
+			}
+
+			#header .social-fixed ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+
+			#header .social-fixed ul li {
+				display: inline-block;
+				margin: 0 8px;
+			}
+
+			#header .social-fixed ul li a {
+				color: rgba(255,255,255,0.75);
+				font-size: 1.25em;
+				transition: color 0.2s ease;
+				text-decoration: none;
+			}
+
+			#header .social-fixed ul li a:hover {
+				color: #ffffff;
+			}
+
+			/* ── Footer icons & copyright ── */
+			#footer .icons a {
+				color: #7b4fa6;
+			}
+
+			/* ── Coming Soon badge ── */
+			.coming-soon-badge {
+				display: inline-block;
+				background: linear-gradient(135deg, #7b4fa6, #3b1a6b);
+				color: #fff;
+				font-size: 0.6em;
+				font-weight: 700;
+				font-family: 'Nunito', sans-serif;
+				letter-spacing: 0.08em;
+				text-transform: uppercase;
+				padding: 3px 10px;
+				border-radius: 20px;
+				margin-left: 8px;
+				vertical-align: middle;
+			}
+
+			/* ── Buttons ── */
+			.button {
+				font-family: 'Nunito', sans-serif;
+				font-weight: 700;
+				letter-spacing: 0.03em;
+				border-radius: 6px;
+			}
+
+			.button.resume {
+    background: linear-gradient(135deg, #7b4fa6, #3b1a6b);
+    color: #fff !important;
+    border: none;
+    padding: 0.4em 1.2em;
+    font-size: 0.78em;
+    margin-top: 12px;
+    display: inline-block;
+}
+
+
+			.button.resume:hover {
+				background: linear-gradient(135deg, #3b1a6b, #7b4fa6);
+				color: #fff !important;
+			}
+
+			/* ── Project view buttons ── */
+			.work-item .button.small {
+				margin-top: 6px;
+				border-color: #7b4fa6;
+				color: #7b4fa6;
+				font-family: 'Nunito', sans-serif;
+				font-weight: 700;
+				border-radius: 6px;
+			}
+
+			.work-item .button.small:hover {
+				background: #7b4fa6;
+				color: #fff;
+			}
+
+			/* ── Responsive: unfix social on small screens ── */
+			@media screen and (max-width: 980px) {
+				#header .social-fixed {
+					position: static;
+					width: 100%;
+					background: transparent;
+					padding: 10px 0 20px 0;
+				}
+			}
+
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+				<a href="#" class="image avatar"><img src="images/Tracy WILC.jpeg" alt="Tracy Omogbai" /></a>
+				<h1>
+					<strong>Hi, my name is Tracy.</strong>
+					I tell the most insightful stories using data, helping organizations stop guessing and start deciding with confidence. I'm a marketing analytics professional and Rice MBA candidate working at the intersection of analytics, automation, and AI.
+				</h1>
+			</div>
+
+			<!-- Social icons fixed at bottom of sidebar -->
+			<div class="social-fixed">
+				<ul>
+					<li><a href="https://www.linkedin.com/in/tracyomogbai" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+					<li><a href="https://github.com/TracyOmogbai" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+					<li><a href="mailto:to30@rice.edu" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+				</ul>
+			</div>
+		</header>
+
+		<!-- Main -->
+		<div id="main">
+
+			<!-- One: About -->
+			<section id="one">
+				<header class="major">
+					<h2>I build analytics systems that help organizations make decisions they can actually stand behind.</h2>
+				</header>
+				<p>I'm a Rice MBA candidate and data analytics professional with hands-on experience across the full analytics workflow, from cleaning and analyzing complex datasets to building dashboards and reports that stakeholders can trust. I work across Excel, Power BI, and SQL, and I bring a strong foundation in turning raw, messy data into clear, actionable insight.</p>
+				<p>What sets me apart is how I think about the work beyond the analysis. I'm certified in Make.com and build agentic AI workflows that automate repetitive processes, so the systems I create don't just answer questions once. They free up teams to focus on the strategic thinking that actually moves organizations forward.</p>
+				<p>I stay genuinely curious about where AI is going and how to integrate it practically into real workflows. That combination of core analytics skills and automation is what I bring to every project.</p>
+				<ul class="actions">
+					<li><a href="resume.pdf" target="_blank" class="button resume">View Resume</a></li>
+				</ul>
+			</section>
+
+			<!-- Two: Recent Work -->
+			<section id="two">
+				<h2>Recent Work</h2>
+				<div class="row">
+
+					<!-- Project 1: ProSupply Global -->
+					<article class="col-6 col-12-xsmall work-item">
+						<a href="images/fulls/prosupply.jpg" class="image fit thumb"><img src="images/thumbs/prosupply.jpg" alt="ProSupply Global Dashboard" /></a>
+						<h3>ProSupply Global</h3>
+						<p>Profitability analysis that identified $135K in profit leakage and increased margins from 12.5% to 18%. Interactive Excel dashboard analyzing 9,994 orders to guide international expansion strategy for a wholesale company.</p>
+						<a href="https://github.com/TracyOmogbai/ProSupply-Expansion-Analysis" target="_blank" class="button resume">View</a>
+					</article>
+
+					<!-- Project 2: Prism Analytics -->
+					<article class="col-6 col-12-xsmall work-item">
+						<a href="images/fulls/prism.jpg" class="image fit thumb"><img src="images/thumbs/prism.jpg" alt="Prism Analytics Dashboard" /></a>
+						<h3>Prism Analytics <span style="font-weight:300; font-size:0.85em;">Where Marketing Spend Meets Strategy</span></h3>
+						<p>An interactive Power BI dashboard that benchmarks digital marketing performance across companies, platforms, and audiences, turning a messy real-world dataset into a clear narrative about what works and what wastes budget.</p>
+						<a href="https://github.com/TracyOmogbai/Prism-Analytics" target="_blank" class="button resume">View</a>
+					</article>
+
+					<!-- Project 3: SQL Coming Soon -->
+					<article class="col-6 col-12-xsmall work-item">
+						<a href="#" class="image fit thumb"><img src="images/thumbs/sql-coming-soon.jpg" alt="SQL Project Coming Soon" /></a>
+						<h3>SQL Analytics Project <span class="coming-soon-badge">In Progress</span></h3>
+						<p>An upcoming data analysis project working with 500K+ rows of data, leveraging SQL for deep-dive analysis and visualization. Link will be available shortly.</p>
+						<span class="button small" style="opacity:0.5; cursor:default;">Coming Soon</span>
+					</article>
+
+				</div>
+				<ul class="actions">
+					<li><a href="https://github.com/TracyOmogbai" target="_blank" class="button">View Full GitHub</a></li>
+				</ul>
+			</section>
+
+			<!-- Three: Get In Touch -->
+			<section id="three">
+				<h2>Get In Touch</h2>
+				<p>I'm currently open to full-time opportunities in data and marketing analytics. Whether you have a question, an opportunity, or just want to connect, feel free to reach out.</p>
+				<div class="row">
+					<div class="col-8 col-12-small">
+						<form method="post" action="#">
+							<div class="row gtr-uniform gtr-50">
+								<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
+								<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
+								<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>
+							</div>
+						</form>
+						<ul class="actions">
+							<li><input type="submit" value="Send Message" /></li>
+						</ul>
+					</div>
+					<div class="col-4 col-12-small">
+						<ul class="labeled-icons">
+							<li>
+								<h3 class="icon solid fa-mobile-alt"><span class="label">Phone</span></h3>
+								832-310-4076
+							</li>
+							<li>
+								<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
+								<a href="mailto:to30@rice.edu">to30@rice.edu</a>
+							</li>
+							<li>
+								<h3 class="icon brands fa-linkedin"><span class="label">LinkedIn</span></h3>
+								<a href="https://www.linkedin.com/in/tracyomogbai" target="_blank">linkedin.com/in/tracyomogbai</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<ul class="icons">
+					<li><a href="https://www.linkedin.com/in/tracyomogbai" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+					<li><a href="https://github.com/TracyOmogbai" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+					<li><a href="mailto:to30@rice.edu" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Tracy Omogbai</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</footer>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.poptrox.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
