@@ -34,6 +34,22 @@
 				color: #2d1b4e;
 			}
 
+			/* About section heading */
+			#about h2 {
+				font-family: 'Nunito', sans-serif;
+				font-weight: 800;
+				color: #2d1b4e;
+				font-size: 1.8em;
+			}
+
+			/* About section text */
+			#about p {
+				font-family: 'Nunito Sans', sans-serif;
+				font-size: 0.95em;
+				line-height: 1.9;
+				color: #333;
+			}
+
 			/* Recent Work & Get In Touch headings */
 			#two h2, #three h2 {
 				font-family: 'Nunito', sans-serif;
@@ -51,12 +67,11 @@
 
 			/* Body text */
 			#one p, #three p, .work-item p {
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 1em;
-    line-height: 1.8;
-    color: #222;
-}
-
+				font-family: 'Nunito Sans', sans-serif;
+				font-size: 0.85em;
+				line-height: 1.8;
+				color: #222;
+			}
 
 			/* ── Purple gradient sidebar ── */
 			#header {
@@ -153,18 +168,35 @@
 			}
 
 			.button.resume {
-    background: linear-gradient(135deg, #7b4fa6, #3b1a6b);
-    color: #fff !important;
-    border: none;
-    padding: 0.4em 1.2em;
-    font-size: 0.78em;
-    margin-top: 12px;
-    display: inline-block;
-}
-
+				background: linear-gradient(135deg, #7b4fa6, #3b1a6b);
+				color: #fff !important;
+				border: none;
+				padding: 0.4em 1.2em;
+				font-size: 0.78em;
+				margin-top: 12px;
+				display: inline-block;
+			}
 
 			.button.resume:hover {
 				background: linear-gradient(135deg, #3b1a6b, #7b4fa6);
+				color: #fff !important;
+			}
+
+			/* ── Outline button (Learn More) ── */
+			.button.outline {
+				background: transparent;
+				color: #7b4fa6 !important;
+				border: 2px solid #7b4fa6;
+				padding: 0.4em 1.2em;
+				font-size: 0.78em;
+				margin-top: 12px;
+				margin-right: 8px;
+				display: inline-block;
+				border-radius: 6px;
+			}
+
+			.button.outline:hover {
+				background: #7b4fa6;
 				color: #fff !important;
 			}
 
@@ -183,6 +215,13 @@
 				color: #fff;
 			}
 
+			/* ── About section styling ── */
+			#about {
+				display: none;
+				border-top: 1px solid #e8e8e8;
+				padding-top: 2em;
+			}
+
 			/* ── Responsive: unfix social on small screens ── */
 			@media screen and (max-width: 980px) {
 				#header .social-fixed {
@@ -194,6 +233,17 @@
 			}
 
 		</style>
+		<script>
+function toggleAbout() {
+    var about = document.getElementById('about');
+    if (about.style.display === 'block') {
+        about.style.display = 'none';
+    } else {
+        about.style.display = 'block';
+        about.scrollIntoView({behavior: 'smooth'});
+    }
+}
+</script>
 	</head>
 	<body class="is-preload">
 
@@ -220,17 +270,23 @@
 		<!-- Main -->
 		<div id="main">
 
-			<!-- One: About -->
+			<!-- One: Hero intro with buttons -->
 			<section id="one">
 				<header class="major">
-					<h2>I build analytics systems that help organizations make decisions they can actually stand behind.</h2>
+					<h2>I build analytics systems that help organizations make decisions they can stand behind.</h2>
 				</header>
+				<ul class="actions">
+					<li><a href="#" onclick="toggleAbout(); return false;" class="button outline">Learn More</a></li>
+					<li><a href="resume.pdf" target="_blank" class="button resume">View Resume</a></li>
+				</ul>
+			</section>
+
+			<!-- About: Full bio revealed on Learn More click -->
+			<section id="about">
+				<h2>About Me</h2>
 				<p>I'm a Rice MBA candidate and data analytics professional with hands-on experience across the full analytics workflow, from cleaning and analyzing complex datasets to building dashboards and reports that stakeholders can trust. I work across Excel, Power BI, and SQL, and I bring a strong foundation in turning raw, messy data into clear, actionable insight.</p>
 				<p>What sets me apart is how I think about the work beyond the analysis. I'm certified in Make.com and build agentic AI workflows that automate repetitive processes, so the systems I create don't just answer questions once. They free up teams to focus on the strategic thinking that actually moves organizations forward.</p>
 				<p>I stay genuinely curious about where AI is going and how to integrate it practically into real workflows. That combination of core analytics skills and automation is what I bring to every project.</p>
-				<ul class="actions">
-					<li><a href="resume.pdf" target="_blank" class="button resume">View Resume</a></li>
-				</ul>
 			</section>
 
 			<!-- Two: Recent Work -->
@@ -249,7 +305,7 @@
 					<!-- Project 2: Prism Analytics -->
 					<article class="col-6 col-12-xsmall work-item">
 						<a href="images/fulls/prism.jpg" class="image fit thumb"><img src="images/thumbs/prism.jpg" alt="Prism Analytics Dashboard" /></a>
-						<h3>Prism Analytics <span style="font-weight:300; font-size:0.85em;">Where Marketing Spend Meets Strategy</span></h3>
+						<h3>Prism Analytics <span style="font-weight:300; font-size:0.85em;">- Where Marketing Spend Meets Strategy</span></h3>
 						<p>An interactive Power BI dashboard that benchmarks digital marketing performance across companies, platforms, and audiences, turning a messy real-world dataset into a clear narrative about what works and what wastes budget.</p>
 						<a href="https://github.com/TracyOmogbai/Prism-Analytics" target="_blank" class="button resume">View</a>
 					</article>
@@ -274,7 +330,7 @@
 				<p>I'm currently open to full-time opportunities in data and marketing analytics. Whether you have a question, an opportunity, or just want to connect, feel free to reach out.</p>
 				<div class="row">
 					<div class="col-8 col-12-small">
-						<form method="post" action="#">
+						<form method="post" action="https://formspree.io/f/mvzbeagb">
 							<div class="row gtr-uniform gtr-50">
 								<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
 								<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
