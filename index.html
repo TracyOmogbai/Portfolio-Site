@@ -13,6 +13,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!-- Google Fonts: Nunito for headers, Nunito Sans for body -->
 		<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 		<style>
 
 			/* ── Global font overrides ── */
@@ -232,6 +233,47 @@
 				}
 			}
 
+			/* ── Skills Section ── */
+#skills {
+    border-top: 1px solid #e8e8e8;
+    padding-top: 2em;
+    margin-bottom: 2em;
+}
+
+#skills h2 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    color: #2d1b4e;
+    font-size: 1.8em;
+    margin-bottom: 1.5em;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    align-items: center;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+    min-width: 80px;
+}
+
+.skill-item i {
+    font-size: 3em;
+}
+
+.skill-item span {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 0.85em;
+    color: #444;
+}
+
 		</style>
 		<script>
 function toggleAbout() {
@@ -288,6 +330,33 @@ function toggleAbout() {
 				<p>What sets me apart is how I think about the work beyond the analysis. I'm certified in Make.com and build agentic AI workflows that automate repetitive processes, so the systems I create don't just answer questions once. They free up teams to focus on the strategic thinking that actually moves organizations forward.</p>
 				<p>I stay genuinely curious about where AI is going and how to integrate it practically into real workflows. That combination of core analytics skills and automation is what I bring to every project.</p>
 			</section>
+
+			<!-- Skills Section -->
+<section id="skills">
+    <h2>Skills & Tools</h2>
+    <div class="skills-grid">
+        <div class="skill-item">
+            <i class="devicon-microsoftexcel-plain colored"></i>
+            <span>Excel</span>
+        </div>
+        <div class="skill-item">
+            <i class="devicon-r-original colored"></i>
+            <span>R</span>
+        </div>
+        <div class="skill-item">
+            <i class="devicon-azuresqldatabase-plain colored"></i>
+            <span>SQL</span>
+        </div>
+        <div class="skill-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI" style="width:50px; height:50px;" />
+            <span>Power BI</span>
+        </div>
+        <div class="skill-item">
+            <img src="https://images.ctfassets.net/qql9f38np5by/6IPVF1RiCCMpvDobGgCeZ4/c2da34dd54d16b5f73e1de97da9e12a1/make-logo-symbol.png" alt="Make.com" style="width:50px; height:50px;" />
+            <span>Make.com</span>
+        </div>
+    </div>
+</section>
 
 			<!-- Two: Recent Work -->
 			<section id="two">
@@ -386,5 +455,3 @@ function toggleAbout() {
 
 	</body>
 </html>
-
-
