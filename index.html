@@ -11,7 +11,6 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<!-- Google Fonts: Nunito for headers, Nunito Sans for body -->
 		<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 		<style>
@@ -234,58 +233,143 @@
 			}
 
 			/* ── Skills Section ── */
-#skills {
-    border-top: 1px solid #e8e8e8;
-    padding-top: 2em;
-    margin-bottom: 2em;
-}
+			#skills {
+				border-top: 1px solid #e8e8e8;
+				padding-top: 2em;
+				margin-bottom: 2em;
+			}
 
-#skills h2 {
-    font-family: 'Nunito', sans-serif;
-    font-weight: 800;
-    color: #2d1b4e;
-    font-size: 1.8em;
-    margin-bottom: 1.5em;
-}
+			#skills h2 {
+				font-family: 'Nunito', sans-serif;
+				font-weight: 800;
+				color: #2d1b4e;
+				font-size: 1.8em;
+				margin-bottom: 1.5em;
+			}
 
-.skills-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2em;
-    align-items: center;
-}
+			.skills-grid {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 2em;
+				align-items: center;
+			}
 
-.skill-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5em;
-    min-width: 80px;
-}
+			.skill-item {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 0.5em;
+				min-width: 80px;
+			}
 
-.skill-item i {
-    font-size: 3em;
-}
+			.skill-item i {
+				font-size: 3em;
+			}
 
-.skill-item span {
-    font-family: 'Nunito', sans-serif;
-    font-weight: 600;
-    font-size: 0.85em;
-    color: #444;
-}
+			.skill-item span {
+				font-family: 'Nunito', sans-serif;
+				font-weight: 600;
+				font-size: 0.85em;
+				color: #444;
+			}
+
+			/* ── Filter Buttons ── */
+			.filter-buttons {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.6em;
+				margin-bottom: 2em;
+			}
+
+			.filter-btn {
+				font-family: 'Nunito', sans-serif;
+				font-weight: 700;
+				font-size: 0.85em;
+				padding: 0.4em 1.2em;
+				border: 2px solid #7b4fa6;
+				border-radius: 25px;
+				background: transparent;
+				color: #7b4fa6;
+				cursor: pointer;
+				transition: all 0.2s ease;
+			}
+
+			.filter-btn:hover, .filter-btn.active {
+				background: linear-gradient(135deg, #7b4fa6, #3b1a6b);
+				color: #fff;
+				border-color: transparent;
+			}
+
+			/* ── All Projects Grid ── */
+			.all-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+				gap: 1em;
+				margin-bottom: 2em;
+			}
+
+			.grid-thumb {
+				display: block;
+				overflow: hidden;
+				border-radius: 8px;
+				border: 2px solid #e8e8e8;
+				transition: transform 0.2s ease, border-color 0.2s ease;
+			}
+
+			.grid-thumb:hover {
+				transform: scale(1.03);
+				border-color: #7b4fa6;
+			}
+
+			.grid-thumb img {
+				width: 100%;
+				height: 140px;
+				object-fit: cover;
+				display: block;
+			}
 
 		</style>
 		<script>
-function toggleAbout() {
-    var about = document.getElementById('about');
-    if (about.style.display === 'block') {
-        about.style.display = 'none';
-    } else {
-        about.style.display = 'block';
-        about.scrollIntoView({behavior: 'smooth'});
-    }
-}
-</script>
+			function toggleAbout() {
+				var about = document.getElementById('about');
+				if (about.style.display === 'block') {
+					about.style.display = 'none';
+				} else {
+					about.style.display = 'block';
+					about.scrollIntoView({behavior: 'smooth'});
+				}
+			}
+
+			function filterProjects(category) {
+				// Update active button
+				var buttons = document.querySelectorAll('.filter-btn');
+				buttons.forEach(function(btn) {
+					btn.classList.remove('active');
+				});
+				event.target.classList.add('active');
+
+				var allGrid = document.getElementById('all-grid');
+				var categoryCards = document.getElementById('category-cards');
+				var articles = categoryCards.querySelectorAll('article');
+
+				if (category === 'all') {
+					allGrid.style.display = 'grid';
+					categoryCards.style.display = 'none';
+				} else {
+					allGrid.style.display = 'none';
+					categoryCards.style.display = 'flex';
+					categoryCards.className = 'row';
+
+					articles.forEach(function(article) {
+						if (article.getAttribute('data-category') === category) {
+							article.style.display = 'block';
+						} else {
+							article.style.display = 'none';
+						}
+					});
+				}
+			}
+		</script>
 	</head>
 	<body class="is-preload">
 
@@ -331,63 +415,117 @@ function toggleAbout() {
 				<p>I stay genuinely curious about where AI is going and how to integrate it practically into real workflows. That combination of core analytics skills and automation is what I bring to every project.</p>
 			</section>
 
-	<!-- Skills Section -->
-<section id="skills">
-    <h2>Skills & Tools</h2>
-    <div class="skills-grid">
-        <div class="skill-item">
-            <img src="https://img.icons8.com/color/96/microsoft-excel-2019--v1.png" alt="Excel" style="width:50px; height:50px;" />
-            <span>Excel</span>
-        </div>
-        <div class="skill-item">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/R_logo.svg" alt="R" style="width:50px; height:50px;" />
-            <span>R</span>
-        </div>
-        <div class="skill-item">
-            <img src="https://img.icons8.com/color/96/sql.png" alt="SQL" style="width:50px; height:50px;" />
-            <span>SQL</span>
-        </div>
-        <div class="skill-item">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI" style="width:50px; height:50px;" />
-            <span>Power BI</span>
-        </div>
-        <div class="skill-item">
-            <img src="https://img.icons8.com/color/96/automation.png" alt="Automation" style="width:50px; height:50px;" />
-            <span>Make.com</span>
-        </div>
-    </div>
-</section>
+			<!-- Skills Section -->
+			<section id="skills">
+				<h2>Skills & Tools</h2>
+				<div class="skills-grid">
+					<div class="skill-item">
+						<img src="https://img.icons8.com/color/96/microsoft-excel-2019--v1.png" alt="Excel" style="width:50px; height:50px;" />
+						<span>Excel</span>
+					</div>
+					<div class="skill-item">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/R_logo.svg" alt="R" style="width:50px; height:50px;" />
+						<span>R</span>
+					</div>
+					<div class="skill-item">
+						<img src="https://img.icons8.com/color/96/sql.png" alt="SQL" style="width:50px; height:50px;" />
+						<span>SQL</span>
+					</div>
+					<div class="skill-item">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI" style="width:50px; height:50px;" />
+						<span>Power BI</span>
+					</div>
+					<div class="skill-item">
+						<img src="https://img.icons8.com/color/96/automation.png" alt="Automation" style="width:50px; height:50px;" />
+						<span>Make.com</span>
+					</div>
+				</div>
+			</section>
 
-			<!-- Two: Recent Work -->
+			<!-- Two: Recent Work with Filter -->
 			<section id="two">
 				<h2>Recent Work</h2>
-				<div class="row">
 
-					<!-- Project 1: ProSupply Global -->
-					<article class="col-6 col-12-xsmall work-item">
-						<a href="images/fulls/prosupply.jpg" class="image fit thumb"><img src="images/thumbs/prosupply.jpg" alt="ProSupply Global Dashboard" /></a>
+				<!-- Filter Buttons -->
+				<div class="filter-buttons">
+					<button class="filter-btn active" onclick="filterProjects('all')">All</button>
+					<button class="filter-btn" onclick="filterProjects('excel')">Excel</button>
+					<button class="filter-btn" onclick="filterProjects('powerbi')">Power BI</button>
+					<button class="filter-btn" onclick="filterProjects('sql')">SQL</button>
+					<button class="filter-btn" onclick="filterProjects('make')">Make.com</button>
+				</div>
+
+				<!-- All Projects Grid (no descriptions) -->
+				<div id="all-grid" class="all-grid">
+					<a href="images/fulls/prosupply.jpg" class="grid-thumb">
+						<img src="images/thumbs/prosupply.jpg" alt="ProSupply Global" />
+					</a>
+					<a href="images/fulls/prism.jpg" class="grid-thumb">
+						<img src="images/thumbs/prism.jpg" alt="Prism Analytics" />
+					</a>
+					<a href="images/fulls/Retail-Sales-Dashboard.png" class="grid-thumb">
+						<img src="images/thumbs/Retail-Sales-Dashboard.png" alt="Retail Sales Performance Dashboard" />
+					</a>
+					<a href="images/fulls/Superstore.jpg" class="grid-thumb">
+						<img src="images/thumbs/Superstore.jpg" alt="Superstore Sales Analysis" />
+					</a>
+				</div>
+
+				<!-- Category Detailed Cards (with descriptions) -->
+				<div id="category-cards" class="row" style="display:none;">
+
+					<!-- ProSupply Global - Excel -->
+					<article class="col-6 col-12-xsmall work-item" data-category="excel">
+						<a href="images/fulls/prosupply.jpg" class="image fit thumb">
+							<img src="images/thumbs/prosupply.jpg" alt="ProSupply Global Dashboard" />
+						</a>
 						<h3>ProSupply Global</h3>
 						<p>Profitability analysis that identified $135K in profit leakage and increased margins from 12.5% to 18%. Interactive Excel dashboard analyzing 9,994 orders to guide international expansion strategy for a wholesale company.</p>
 						<a href="https://github.com/TracyOmogbai/ProSupply-Expansion-Analysis" target="_blank" class="button resume">View</a>
 					</article>
 
-					<!-- Project 2: Prism Analytics -->
-					<article class="col-6 col-12-xsmall work-item">
-						<a href="images/fulls/prism.jpg" class="image fit thumb"><img src="images/thumbs/prism.jpg" alt="Prism Analytics Dashboard" /></a>
+					<!-- Prism Analytics - Power BI -->
+					<article class="col-6 col-12-xsmall work-item" data-category="powerbi">
+						<a href="images/fulls/prism.jpg" class="image fit thumb">
+							<img src="images/thumbs/prism.jpg" alt="Prism Analytics Dashboard" />
+						</a>
 						<h3>Prism Analytics <span style="font-weight:300; font-size:0.85em;">- Where Marketing Spend Meets Strategy</span></h3>
 						<p>An interactive Power BI dashboard that benchmarks digital marketing performance across companies, platforms, and audiences, turning a messy real-world dataset into a clear narrative about what works and what wastes budget.</p>
 						<a href="https://github.com/TracyOmogbai/Prism-Analytics" target="_blank" class="button resume">View</a>
 					</article>
 
-					<!-- Project 3: Superstore Sales Analysis -->
-					<article class="col-6 col-12-xsmall work-item">
-						<a href="images/fulls/Superstore.jpg" class="image fit thumb"><img src="images/thumbs/Superstore.jpg" alt="Superstore Sales Analysis" /></a>
+					<!-- Retail Sales - Power BI -->
+					<article class="col-6 col-12-xsmall work-item" data-category="powerbi">
+						<a href="images/fulls/Retail-Sales-Dashboard.png" class="image fit thumb">
+							<img src="images/thumbs/Retail-Sales-Dashboard.png" alt="Retail Sales Performance Dashboard" />
+						</a>
+						<h3>Retail Sales Performance Dashboard</h3>
+						<p>A four-year retail sales analysis uncovering revenue trends, customer purchase patterns, and regional profitability to guide smarter business and budget decisions.</p>
+						<a href="https://github.com/TracyOmogbai/Retail-Sales-Dashboard" target="_blank" class="button resume">View</a>
+					</article>
+
+					<!-- Superstore - SQL -->
+					<article class="col-6 col-12-xsmall work-item" data-category="sql">
+						<a href="images/fulls/Superstore.jpg" class="image fit thumb">
+							<img src="images/thumbs/Superstore.jpg" alt="Superstore Sales Analysis" />
+						</a>
 						<h3>Superstore Sales Analysis</h3>
 						<p>An end-to-end SQL analysis of 500K+ rows of retail sales data, uncovering revenue trends, regional performance, and product insights to drive smarter business decisions.</p>
 						<a href="https://github.com/TracyOmogbai/Superstore-Sales-Data-Analysis/tree/main" target="_blank" class="button resume">View</a>
 					</article>
 
+					<!-- Make.com - Coming Soon -->
+					<article class="col-6 col-12-xsmall work-item" data-category="make">
+						<a href="#" class="image fit thumb" style="background:#f5f0ff; display:flex; align-items:center; justify-content:center; min-height:150px;">
+							<span style="color:#7b4fa6; font-family:'Nunito',sans-serif; font-weight:700; font-size:0.9em;">Coming Soon</span>
+						</a>
+						<h3>AI Marketing Insights Tool <span class="coming-soon-badge">Coming Soon</span></h3>
+						<p>A live AI-powered marketing automation tool built with Make.com and Claude AI that generates real-time insights from marketing data and logs results automatically.</p>
+						<span class="button small" style="opacity:0.5; cursor:default; margin-top:12px; display:inline-block;">Coming Soon</span>
+					</article>
+
 				</div>
+
 				<ul class="actions">
 					<li><a href="https://github.com/TracyOmogbai" target="_blank" class="button">View All</a></li>
 				</ul>
